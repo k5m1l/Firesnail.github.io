@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="Style.css">
+	<link rel="shortcut icon" href="Logo.png">
+    <title>Idealne Terrarium dla Ślimaka Afrykańskiego</title>
+    <style>
+        #Terramain 
+		{
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+		#Terramain *
+		{
+			margin-top: 20px;
+		}
+		p
+		{
+			font-size: 150%;
+		}
+        h1, h2, h3 
+		{
+			font-size: 200%;
+            color: #2c3e50;
+			margin-bottom: 20px;
+			margin-top: 20px;
+        }
+        table 
+		{
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td 
+		{
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+            text-align: left;
+        }
+        th 
+		{
+            background-color: #ecf0f1;
+        }
+        .calculator 
+		{
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+		<header>
+			<div id="Logo" class="HeaderElements">
+				<img src="Logo.png">
+			</div>
+			<div id="Nazwa" class="HeaderElements">
+				<h1>Fire Snail</h1>
+			</div>
+			<div id="Sociale" class="HeaderElements">
+				<a href="https://www.facebook.com" target="_blank"><img src="fb.png"></a>
+				<a href="https://www.instagram.com" target="_blank"><img src="ig.png"></a>
+			</div>
+			<div id="blockh"></div>
+		</header>
+		<nav>
+			<ol>
+				<li><a href="index.html">Strona główna</a></li>
+				<li><a href="index.html">Terrarium</a>
+					<ul>
+						<li><a href="terrarium.html">Pierwsze  terrarium</a></li>
+						<li><a href="terrarium.html">Temperatura</a></li>  
+						<li><a href="topd.html">Top 10 sklepów</a></li>
+					</ul>
+				</li>
+				<li><a href="index.html">O ślimaku</a>
+					<ul>
+						<li><a href="dietaa.html">Dieta</a></li>
+						<li><a href="roznegatunki.html">Gatunki</a></li>
+						<li><a href="mineraly.html">Niezbędne minerały</a></li>
+						<li><a href="Galeria.html">Galeria</a></li>
+					</ul>
+				</li>
+				<li><a href="index.html">Poradniki</a>
+					<ul>
+						<li><a href="terrarium.html">Budowa terrarium</a></li>  
+						<li><a href="dietaa.html">Dieta dla ślimaka</a></li>
+					</ul>
+				</li>
+				<li><a href="#Kontakty">Kontakt</a></li>
+				<li><a href="FaQ.html">F&amp;Q</a></li>
+			</ol>
+		</nav>
+		<div id="terramain">
+		<h1>Jak zrobić idealne terrarium dla ślimaka afrykańskiego</h1>
+		<h2>Wstęp</h2>
+<p>Terrarium dla ślimaka afrykańskiego to świetny sposób na stworzenie komfortowego i zdrowego środowiska dla Twojego pupila. W tym artykule przedstawimy kroki do stworzenia idealnego terrarium, a także przydatne narzędzia i informacje, które pomogą Ci w tym zadaniu.</p>
+
+<h2>1. Kalkulatory</h2>
+<p><strong>Kalkulatory potrzebne do wyliczenia idealnego terrarium:</strong></p>
+<div class="calculator">
+    <h3>Kalkulator objętości terrarium</h3>
+    <label for="length">Długość (cm): </label>
+    <input type="number" id="length" required>
+    <br>
+    <label for="width">Szerokość (cm): </label>
+    <input type="number" id="width" required>
+    <br>
+    <label for="height">Wysokość (cm): </label>
+    <input type="number" id="height" required>
+    <br>
+    <button onclick="calculateVolume()">Oblicz objętość</button>
+    <p id="volumeResult"></p>
+</div>
+
+<div class="calculator">
+    <h3>Kalkulator ilości podłoża</h3>
+    <label for="terrariumVolume">Objętość terrarium (l): </label>
+    <input type="number" id="terrariumVolume" required>
+    <br>
+    <button onclick="calculateSubstrate()">Oblicz ilość podłoża</button>
+    <p id="substrateResult"></p>
+</div>
+
+<div class="calculator">
+    <h3>Kalkulator ilości roślin</h3>
+    <label for="substrateVolume">Ilość podłoża (l): </label>
+    <input type="number" id="substrateVolume" required>
+    <br>
+    <button onclick="calculatePlants()">Oblicz ilość roślin</button>
+    <p id="plantsResult"></p>
+</div>
+
+<script>
+    function calculateVolume() {
+        const length = document.getElementById("length").value;
+        const width = document.getElementById("width").value;
+        const height = document.getElementById("height").value;
+
+        // Oblicz objętość w litrach (1 cm³ = 0,001 l)
+        const volume = (length * width * height) / 1000;
+        document.getElementById("volumeResult").innerText = `Objętość terrarium wynosi: ${volume.toFixed(2)} l`;
+    }
+
+    function calculateSubstrate() {
+        const terrariumVolume = document.getElementById("terrariumVolume").value;
+
+        // Przyjmujemy, że potrzebujemy 5 cm warstwy podłoża
+        const substrateVolume = terrariumVolume * 0.05;
+        document.getElementById("substrateResult").innerText = `Potrzebujesz: ${substrateVolume.toFixed(2)} l podłoża.`;
+    }
+
+    function calculatePlants() {
+        const substrateVolume = document.getElementById("substrateVolume").value;
+
+        // Przyjmujemy, że na każdy litr podłoża potrzebujemy 1 rośliny
+        const plantsCount = substrateVolume;
+        document.getElementById("plantsResult").innerText = `Potrzebujesz: ${plantsCount} roślin.`;
+    }
+</script>
+
+<h2>2. Lista idealnych rzeczy do terrarium</h2>
+<p><strong>Oto lista rzeczy, które warto kupić do terrarium:</strong></p>
+<menu>
+    <li>Podłoże (np. torf kokosowy, ziemia)</li>
+    <li>Rośliny (np. paprocie, mchy)</li>
+    <li>Miseczka na wodę</li>
+    <li>Kawałki drewna lub kamienie</li>
+    <li>Kryjówki (np. małe doniczki)</li>
+    <li>Oświetlenie (lampki LED)</li>
+    <li>Grzałka (jeśli potrzebna)</li>
+</menu>
+
+<h2>3. Tabelka z przykładowymi rzeczami do terrarium</h2>
+<table>
+    <tr>
+        <th>Przedmiot</th>
+        <th>Opis</th>
+        <th>Link</th>
+    </tr>
+    <tr>
+        <td>Podłoże</td>
+        <td>Naturalne, wilgotne włókno kokosowe</td>
+        <td><a href="https://bioterr.pl/pl/p/Podloze-kokosowe-gotowe-do-uzycia-wlokno-kokosowe/248">[Link]</a></td>
+    </tr>
+    <tr>
+        <td>Rośliny</td>
+        <td>Paprocie, mchy, zielistka sternberga</td>
+        <td><a href="https://zielony-parapet.pl/wszystkie-rosliny-zp/615-chlorophytum-comosum-atlantic-zielistka-6499758003885.html?srsltid=AfmBOoptPi51PkJPLoEpkIkUxYozLkAlat3801SDiIOhAXHdveopgNxP">[Link]</a></td>
+    </tr>
+    <tr>
+        <td>Miseczka na wodę</td>
+        <td>Niska, płytka i szeroka</td>
+        <td><a href="https://bioterr.pl/pl/p/ZOOMED-Food-Dish-L-Miseczka-na-Jedzenie-Miska-do-Terrarium/2470">[Link]</a></td>
+    </tr>
+    <tr>
+        <td>Kryjówki</td>
+        <td>Małe doniczki w których ślimak może się schować</td>
+        <td><a href="https://edonkwiat.pl/doniczka-okragla-standard-rs0-3/?gad_source=1&gclid=Cj0KCQiAlsy5BhDeARIsABRc6Zt5E29IzwlvKSAtTtLfZ8OyBI9QGbfzU36Au9cdRqdzsVQZNjXwACgaArMPEALw_wcB">[Link]</a></td>
+    </tr>
+	<tr>
+        <td>Termohigrometr</td>
+        <td>Do sprawdzania wilgotności i temperatury u ślimaka</td>
+        <td><a href="https://bioterr.pl/pl/p/Termo-higrometr-cyfrowy%2C-2w1-z-sonda/85">[Link]</a></td>
+    </tr>
+</table>
+
+<h2>4. Opis sposobu wentylacji akwarium</h2>
+<p><strong>Wentylacja terrarium:</strong></p>
+<ul>
+    <li>Użyj wentylatorów lub otworów w pokrywie terrarium.</li>
+    <li>Optymalna wentylacja zapobiega gromadzeniu się wilgoci i pleśni.</li>
+    <li>Wietrzenie terrarium co kilka dni jest zalecane.</li>
+</ul>
+
+<h2>5. Sposoby ogrzania terrarium</h2>
+<p><strong>Ogrzewanie terrarium:</strong></p>
+<ul>
+    <li><strong>Ogrzewanie podłogowe:</strong> Umożliwia równomierne ogrzewanie.</li>
+    <li><strong>Grzałka:</strong> Można umieścić w terrarium w celu podniesienia temperatury.</li>
+    <li><strong>Lampa grzewcza:</strong> Stosowana do dodatkowego ogrzewania w nocy.</li>
+</ul>
+
+<img src="Wykres.png" alt="Wykres dotyczący ogrzewania terrarium" />
+
+<h2>6. Średnie koszty utrzymania terrarium</h2>
+<p><strong>Koszty:</strong></p>
+<ul>
+    <li>Podłoże: <strong>10-30 zł</strong></li>
+    <li>Rośliny: <strong>20-50 zł</strong></li>
+    <li>Oświetlenie: <strong>50-150 zł</strong></li>
+    <li>Grzałka: <strong>30-100 zł</strong></li>
+    <li>Woda i pokarm: <strong>20-40 zł miesięcznie</strong></li>
+</ul>
+
+<h2>Podsumowanie</h2>
+<p>Stworzenie idealnego terrarium dla ślimaka afrykańskiego wymaga przemyślenia i dobrego planowania. Użyj powyższych wskazówek, aby stworzyć komfortowe i zdrowe środowisko dla Twojego pupila. Pamiętaj o regularnym monitorowaniu warunków w terrarium i dostosowywaniu ich do potrzeb ślimaka.</p>
+</div>
+		<footer>
+			<p id="Kontakt">
+				Nip: 000001<br>
+				<a href="mailto:firesnailnewsletter@gmail.com">Kontakt mailowy</a>
+				tel:123 456 789<br>
+				Fire Snial © Wszelkie prawa zastrzeżone
+			</p>
+		</footer>
+</body>
+</html>

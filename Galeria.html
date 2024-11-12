@@ -1,0 +1,162 @@
+<!Doctype HTML>
+<html lang="PL">
+	<head>
+		<meta charset="UTF-8">
+		<title>Strona ślimaka</title>
+		<link rel="stylesheet" href="Style.css">
+		<link rel="shortcut icon" href="Logo.png">
+
+	</head>
+	<body>
+		<header>
+			<div id="Logo" class="HeaderElements">
+				<img src="Logo.png">
+			</div>
+			<div id="Nazwa" class="HeaderElements">
+				<h1>Fire Snail</h1>
+			</div>
+			<div id="Sociale" class="HeaderElements">
+				<a href="https://www.facebook.com" target="_blank"><img src="fb.png"></a>
+				<a href="https://www.instagram.com" target="_blank"><img src="ig.png"></a>
+			</div>
+			<div id="blockh"></div>
+		</header>
+		<nav>
+			<ol>
+				<li><a href="index.html">Strona główna</a></li>
+				<li><a href="index.html">Terrarium</a>
+					<ul>
+						<li><a href="terrarium.html">Pierwsze  terrarium</a></li>
+						<li><a href="terrarium.html">Temperatura</a></li>  
+						<li><a href="topd.html">Top 10 sklepów</a></li>
+					</ul>
+				</li>
+				<li><a href="index.html">O ślimaku</a>
+					<ul>
+						<li><a href="dietaa.html">Dieta</a></li>
+						<li><a href="roznegatunki.html">Gatunki</a></li>
+						<li><a href="mineraly.html">Niezbędne minerały</a></li>
+						<li><a href="Galeria.html">Galeria</a></li>
+					</ul>
+				</li>
+				<li><a href="index.html">Poradniki</a>
+					<ul>
+						<li><a href="terrarium.html">Budowa terrarium</a></li>  
+						<li><a href="dietaa.html">Dieta dla ślimaka</a></li>
+					</ul>
+				</li>
+				<li><a href="#Kontakty">Kontakt</a></li>
+				<li><a href="FaQ.html">F&amp;Q</a></li>
+			</ol>
+		</nav>
+		<main id="Gallery_Main">
+			<div class="gallery">
+				<img src="1.png" alt="Zdjęcie 1" data-index="1">
+				<img src="2.png" alt="Zdjęcie 2" data-index="2">
+				<img src="3.jpg" alt="Zdjęcie 3" data-index="3">
+				<img src="4.jpg" alt="Zdjęcie 4" data-index="4">
+				<img src="5.jpg" alt="Zdjęcie 5" data-index="5">
+				<img src="6.jpg" alt="Zdjęcie 6" data-index="6">
+				<img src="7.jpg" alt="Zdjęcie 7" data-index="7">
+				<img src="8.jpg" alt="Zdjęcie 8" data-index="8">
+				<img src="9.jpg" alt="Zdjęcie 9" data-index="9">
+				<img src="10.jpg" alt="Zdjęcie 10" data-index="10">
+				<img src="11.jpg" alt="Zdjęcie 11" data-index="11">
+				<img src="12.jpg" alt="Zdjęcie 12" data-index="12">
+				<img src="13.jpg" alt="Zdjęcie 13" data-index="13">
+				<img src="14.jpg" alt="Zdjęcie 14" data-index="14">
+				<img src="15.jpg" alt="Zdjęcie 15" data-index="15">
+				<img src="16.jpg" alt="Zdjęcie 16" data-index="16">
+				<img src="17.jpg" alt="Zdjęcie 17" data-index="17">
+				<img src="18.jpg" alt="Zdjęcie 18" data-index="18">
+				<img src="19.jpg" alt="Zdjęcie 19" data-index="19">
+				<img src="20.jpg" alt="Zdjęcie 20" data-index="20">
+				<img src="21.jpg" alt="Zdjęcie 21" data-index="21">
+				<img src="22.jpg" alt="Zdjęcie 22" data-index="22">
+				<img src="23.jpg" alt="Zdjęcie 23" data-index="23">
+				<img src="24.jpg" alt="Zdjęcie 24" data-index="24">
+				<img src="25.jpg" alt="Zdjęcie 25" data-index="25">
+				<img src="26.jpg" alt="Zdjęcie 26" data-index="26">
+				<img src="27.jpg" alt="Zdjęcie 27" data-index="27">
+				<img src="28.jpg" alt="Zdjęcie 28" data-index="28">
+				<img src="29.jpg" alt="Zdjęcie 29" data-index="29">
+				<img src="30.jpg" alt="Zdjęcie 30" data-index="30">
+			</div>
+
+<div class="popup">
+	<div class="close-button"><p class="close-buttonn">&#10005;</p></div>
+	<div class="controls" class="prev">
+		<button class="prev">&lt;</button>
+	</div>
+	<div class="img">
+		<img src="" alt="Zdjęcie">
+	</div>
+	<div class="controls" class="next">
+		<button class="next">&gt;</button>
+	</div>
+</div>
+		</main>
+		<footer>
+			<p id="Kontakt">
+				Nip: 000001<br>
+				<a href="mailto:firesnailnewsletter@gmail.com">Kontakt mailowy</a>
+				tel:123 456 789<br>
+				Fire Snial © Wszelkie prawa zastrzeżone
+			</p>
+		</footer>
+		<script>
+			const gallery = document.querySelector('.gallery');
+			const popup = document.querySelector('.popup');
+			const popupImg = popup.querySelector('img');
+			const prevButton = popup.querySelector('.prev');
+			const nextButton = popup.querySelector('.next');
+			const closeButton = popup.querySelector('.close-buttonn');
+
+			let currentImageIndex = 0;
+
+			gallery.addEventListener('click', (event) => 
+			{
+				if (event.target.tagName === 'IMG') 
+				{
+					const imageIndex = parseInt(event.target.dataset.index);
+					currentImageIndex = imageIndex;
+					popupImg.src = event.target.src;
+					popup.style.display = 'block';
+				}
+			});
+
+			prevButton.addEventListener('click', () => 
+			{
+				currentImageIndex--;
+				if (currentImageIndex < 1) 
+				{
+					currentImageIndex = gallery.querySelectorAll('img').length;
+				}
+				popupImg.src = gallery.querySelectorAll('img')[currentImageIndex - 1].src;
+			});
+
+			nextButton.addEventListener('click', () => 
+			{
+				currentImageIndex++;
+				if (currentImageIndex > gallery.querySelectorAll('img').length) 
+				{
+					currentImageIndex = 1;
+				}
+				popupImg.src = gallery.querySelectorAll('img')[currentImageIndex - 1].src;
+			});
+
+			popup.addEventListener('click', (event) => 
+			{
+				if (event.target === popup) 
+				{
+					popup.style.display = 'none';
+				}
+			});
+
+			closeButton.addEventListener('click', (event) => 
+			{ 
+				popup.style.display = 'none';
+			});
+</script>
+	</body>
+</html>
