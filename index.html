@@ -2,7 +2,7 @@
 <html lang="PL">
 	<head>
 		<meta charset="UTF-8">
-		<title>Fire Snail</title>
+		<title>Strona ślimaka</title>
 		<link rel="stylesheet" href="Style.css">
 		<link rel="shortcut icon" href="Logo.png">
 		<meta name="description" content="Chcesz zrobić idealne terrarium dla ślimaków afrykańskich? odwiedź naszą stronę!">
@@ -33,6 +33,94 @@
 					pointer-events: none;
 				}
 				</style></head>
+		<style>
+			#Swieta
+			{
+				width: 100%;
+				height: 600px;
+				background-image: url("tloo.png");
+					background-repeat: no-repeat;
+	background-size: cover;
+			}
+		#Tekstt
+		{
+			float: left;
+			width: 55%;
+		}
+#choinkaa
+{
+	width: 45%;
+	height: 600px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	float: left;
+}
+
+.choinka
+{
+	position: relative;
+	top: -150px;
+	width: 300px;
+	height: 300px;
+	transform-style: preserve-3d;
+	transform: rotateX(-20deg) rotateY(30deg);
+	animation: krecenie 6s linear infinite;
+}
+
+@keyframes krecenie
+{
+	0%
+	{
+		transform: rotateX(-20deg) rotateY(360deg);
+	}
+	100%
+	{
+		transform: rotateX(-20deg) rotateY(0deg);
+	}
+}
+
+.choinka div
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transform: translateY(calc(100px * var(--j)));
+}
+
+.choinka .top span
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, #69c069, #77dd77);
+	clip-path: polygon(50% 20%,0% 100%,100% 100%);
+	transform-origin: bottom;
+	border-bottom: 10px solid #000000019;
+	transform: rotateY(calc(90deg * var(--i))) rotateX(39deg) translateZ(193px);
+}
+
+.choinka .bottom span
+{
+	position: absolute;
+	top: 350px;
+	left: calc(50% - 30px);
+	width: 60px;
+	height: 80%;
+	background: linear-gradient(90deg, #bb4622, #df7214);
+	/**clip-path: polygon(50% 20%,0% 100%,100% 100%);**/
+	transform-origin: bottom;
+	border-bottom: 10px solid #000000055;
+	transform: rotateY(calc(90deg * var(--i))) translateZ(30px);
+}
+
+
+		</style>
 	<body>
 		<header>
 			<div id="Logo" class="HeaderElements">
@@ -88,7 +176,7 @@
 							<div class="lupa">⌕</div></a>
 						</div>
 						<div class="artykol">
-							<a href="Mineraly.html"><img src="Mineraly.png" alt="Obrazek artykułu">
+							<a href="mineraly.html"><img src="mineraly.png" alt="Obrazek artykułu">
 							<div class="lupa">⌕</div></a>
 						</div>
 						<p class="break"></p>
@@ -137,6 +225,63 @@
 				</div>
 			</div>
 		</main>
+		<div id="Swieta">
+			<div id="choinkaa">
+				<div class="choinka">
+					<div class="top" style="--j:0;">
+						<span style="--i:0;"></span>
+						<span style="--i:1;"></span>
+						<span style="--i:2;"></span>
+						<span style="--i:3;"></span>
+					</div>
+					<div class="top" style="--j:1;">
+						<span style="--i:0;"></span>
+						<span style="--i:1;"></span>
+						<span style="--i:2;"></span>
+						<span style="--i:3;"></span>
+					</div>
+					<div class="top" style="--j:2;">
+						<span style="--i:0;"></span>
+						<span style="--i:1;"></span>
+						<span style="--i:2;"></span>
+						<span style="--i:3;"></span>
+					</div>
+					<div class="bottom">
+						<span style="--i:0;"></span>
+						<span style="--i:1;"></span>
+						<span style="--i:2;"></span>
+						<span style="--i:3;"></span>
+					</div>
+				</div>
+			</div>
+			<div id="Tekstt">
+				<h1>Świąteczny Konkurs Plastyczny - "Ślimakowe Święta"!</h1>
+				<h2>Chcesz wygrać:</h2>
+
+				<menu>
+					<li>2x Telefon Samsung S24 FE</li>
+					<li>5x 2000 zł</li>
+					<li>50 bonów za 200 zł do sklepów Allegro i zaprzyjaźnionych sklepów terrarystycznych</li>
+					<li>Nagrody niespodzianki</li>
+					<li>Dyplomy</li>
+				</menu>
+					
+					<h2>Co zrobić, żeby wziąć udział?</h2>
+					
+					1. Stwórz pracę plastyczną, rysunek lub grafikę komputerową (2D lub 3D) związaną ze świętami i ślimakami.<br>
+					2. Wyślij swoją pracę na maila zespołu Fire Snail z tematem: "Konkurs Święta".<br>
+					<br>
+					<br>
+					Termin nadsyłania prac: do końca grudnia.
+					<br>
+					<br>
+					Pozwól swojej kreatywności rozkwitnąć i stwórz świąteczne dzieło z motywem ślimaka!
+					<br>
+					<br>
+					Dołącz do nas i wygraj fantastyczne nagrody!
+					<img src="laski.png" alt="Laski cukrowe">
+			</div>
+		</div>
 		<footer>
 			<p id="Kontakt">
 				Nip: 000001<br>
